@@ -6,22 +6,35 @@
   @apply px-4 lg:px-10 max-w-7xl mx-auto;
 }
 
-.active {
-  @apply text-base font-medium tracking-wide hover:text-orange-500 transition-colors hover:bg-orange-50 duration-200 w-full p-2 whitespace-nowrap;
+.text-primary{
+@apply text-orange-500
 }
+
+.text-secondary{
+@apply text-gray-600
+}
+
+.bg-primary{
+@apply bg-orange-500
+}
+
+.active {
+  @apply text-base font-medium tracking-wide hover:text-orange-500 transition-colors hover:max-md:bg-orange-50 duration-200 w-full p-2 whitespace-nowrap;
+}
+
 
 @layer base {
   h1 {
-    @apply text-6xl font-bold;
+    @apply lg:text-6xl text-5xl font-bold;
   }
   h2 {
-    @apply text-5xl font-bold;
+    @apply lg:text-5xl text-4xl font-bold;
   }
   h3 {
-    @apply text-4xl font-bold;
+    @apply lg:text-4xl text-3xl font-bold;
   }
   h4 {
-    @apply text-3xl font-bold;
+    @apply lg:text-3xl text-2xl font-bold;
   }
   h5 {
     @apply text-2xl font-bold;
