@@ -7,10 +7,10 @@ const Test = () => {
         alt=""
       />
       <div className="absolute flex items-center justify-center top-0 left-0 right-0 h-full bg-slate-950 bg-opacity-45">
-        <h3 className="text-white text-center leading-tight">
+        <h2 className="text-white text-center leading-tight">
           ই-কমার্স ব্যবসা এখন <br />
           হাতের মুঠোয়
-        </h3>
+        </h2>
       </div>
 
       <div className="absolute"></div>
