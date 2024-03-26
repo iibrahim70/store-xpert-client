@@ -27,6 +27,11 @@ const navItems = [
 
 const BarItems = () => (
   <>
+    <img
+      className="lg:h-8 lg:block hidden h-7 mr-9"
+      src="/src/assets/logos/logo-orange.png"
+      alt="StoreXpert"
+    />
     <div className="flex lg:items-center justify-center items-start lg:flex-row flex-col gap-2">
       {navItems.map((item) => (
         <NavLink key={item?.id} to={"#" + item?.id} smooth className="active">
@@ -48,30 +53,18 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   return (
     <nav className="bg-white shadow-md py-5 sticky top-0 left-0 right-0 z-10">
-      <div className="container flex items-center ">
+      <div className="container">
+      <div className="lg:flex hidden items-center justify-between">
+        <BarItems />
+      </div>
+
+      {/* small device */}
+      <div className="lg:hidden flex items-center justify-between">
         <img
           className="lg:h-8 h-7 mr-9"
           src="/src/assets/logos/logo-orange.png"
           alt="StoreXpert"
         />
-
-        <div className="lg:flex w-full hidden items-center justify-between">
-          <BarItems />
-        </div>
-
-        {/* small device */}
-        <div
-          className={`lg:hidden w-full z-10 ${
-            showNavbar ? "bg-black bg-opacity-10 fixed top-[68px] left-0 " : ""
-          } h-full duration-500`}>
-          <div
-            className={`bg-white ml-auto w-1/2 h-full shadow-md py-10 px-8 fixed top-[68px] ${
-              showNavbar ? "right-0 left-0" : "-right-[600px]"
-            } duration-300`}>
-            <BarItems />
-          </div>
-        </div>
-
         <Button
           size="icon"
           className="lg:hidden ml-auto"
@@ -82,6 +75,18 @@ const Navbar = () => {
             <HiMiniBars3CenterLeft className="rotate-180 " />
           )}
         </Button>
+      </div>
+      <div
+        className={`lg:hidden w-full z-10 ${
+          showNavbar ? "bg-black bg-opacity-10 fixed top-[68px] left-0 " : ""
+        } h-full duration-500`}>
+        <div
+          className={`bg-white ml-auto w-1/2 h-full shadow-md py-10 px-8 fixed top-[68px] ${
+            showNavbar ? "right-0 left-0" : "-right-[600px]"
+          } duration-300`}>
+          <BarItems />
+        </div>
+      </div>
       </div>
     </nav>
   );
