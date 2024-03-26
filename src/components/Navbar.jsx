@@ -8,12 +8,12 @@ import { GiCrossedBones } from "react-icons/gi";
 
 const navItems = [
   {
-    id: "why-us",
-    name: "Why Us?",
-  },
-  {
     id: "templates",
     name: "Templates",
+  },
+  {
+    id: "why-us",
+    name: "Why Us?",
   },
   {
     id: "pricing",
@@ -54,39 +54,39 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md py-5 sticky top-0 left-0 right-0 z-10">
       <div className="container">
-      <div className="lg:flex hidden items-center justify-between">
-        <BarItems />
-      </div>
-
-      {/* small device */}
-      <div className="lg:hidden flex items-center justify-between">
-        <img
-          className="lg:h-8 h-7 mr-9"
-          src="/src/assets/logos/logo-orange.png"
-          alt="StoreXpert"
-        />
-        <Button
-          size="icon"
-          className="lg:hidden ml-auto"
-          onClick={() => setShowNavbar(!showNavbar)}>
-          {showNavbar ? (
-            <GiCrossedBones />
-          ) : (
-            <HiMiniBars3CenterLeft className="rotate-180 " />
-          )}
-        </Button>
-      </div>
-      <div
-        className={`lg:hidden w-full z-10 ${
-          showNavbar ? "bg-black bg-opacity-10 fixed top-[68px] left-0 " : ""
-        } h-full duration-500`}>
-        <div
-          className={`bg-white ml-auto w-1/2 h-full shadow-md py-10 px-8 fixed top-[68px] ${
-            showNavbar ? "right-0 left-0" : "-right-[600px]"
-          } duration-300`}>
+        <div className="lg:flex hidden items-center justify-between">
           <BarItems />
         </div>
-      </div>
+
+        {/* small device */}
+        <div className="lg:hidden flex items-center justify-between">
+          <img
+            className="lg:h-8 h-7 mr-9"
+            src="/src/assets/logos/logo-orange.png"
+            alt="StoreXpert"
+          />
+          <Button
+            size="icon"
+            className="lg:hidden ml-auto"
+            onClick={() => setShowNavbar(!showNavbar)}>
+            {showNavbar ? (
+              <GiCrossedBones />
+            ) : (
+              <HiMiniBars3CenterLeft className="rotate-180 " />
+            )}
+          </Button>
+        </div>
+        <div
+          className={`lg:hidden w-full z-10 ${
+            showNavbar ? "bg-black bg-opacity-10 fixed top-[68px] left-0 " : ""
+          } h-full duration-500`}>
+          <div
+            className={`bg-white ml-auto w-1/2 h-full shadow-md py-10 px-8 fixed top-[68px] ${
+              showNavbar ? "right-0 left-0" : "-right-[600px]"
+            } duration-300`}>
+            <BarItems />
+          </div>
+        </div>
       </div>
     </nav>
   );
