@@ -1,6 +1,6 @@
 const SetupProcess = () => {
   return (
-    <section className="container text-center mt-20">
+    <section id="setup-process" className="container lg:pt-28 pt-24 text-center">
       <h3>
         ওয়েবসাইট <span className="text-primary">সেটাপ প্রসেস</span>
       </h3>
