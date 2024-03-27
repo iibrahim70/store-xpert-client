@@ -16,8 +16,12 @@ const navItems = [
     name: "Why Us?",
   },
   {
-    id: "pricing",
-    name: "Pricing",
+    id: "setup-process",
+    name: "Setup Process",
+  },
+  {
+    id: "features",
+    name: "Features",
   },
   {
     id: "contact-us",
@@ -77,6 +81,7 @@ const Navbar = () => {
           </Button>
         </div>
         <div
+          onClick={() => setShowNavbar(!showNavbar)}
           className={`lg:hidden w-full z-10 ${
             showNavbar ? "bg-black bg-opacity-10 fixed top-[68px] left-0 " : ""
           } h-full duration-500`}>

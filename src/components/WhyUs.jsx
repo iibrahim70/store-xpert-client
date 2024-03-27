@@ -45,13 +45,13 @@ const features = [
 
 const WhyUs = () => {
   return (
-    <section className="container mt-20">
-      <div className=" border-orange-500 border-l-8 rounded-l-md pl-3 py-1">
-        <p className="text-secondary text-lg">Take a look</p>
-        <h4 className="mt-2">
+    <section id="why-us" className="container lg:pt-28 pt-24">
+      <div className="text-center border-orange-500 bg-orange-50/50 border-x-8 rounded-md pl-3 py-1 mb-10">
+        {/* <p className="text-secondary text-lg">Take a look</p> */}
+        <h3 className="mt-2 leading-normal">
           কেন <span className="text-primary">StoreXpert</span> এর কাছ থেকে
           ওয়েবসাইট নিবেন?
-        </h4>
+        </h3>
       </div>
 
       {/* all about us */}
@@ -60,10 +60,10 @@ const WhyUs = () => {
           <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work "
-            contentStyle={{ background: "rgb(253 186 116)", color: "#151515" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(253 186 116)" }}
-            iconStyle={{ background: "rgb(253 186 116)", color: "#151515" }}
-            icon={<feature.icon />}>
+            contentStyle={{ background: "rgb(255 247 237)", color: "#151515" }}
+            contentArrowStyle={{ borderRight: "7px solid rgb(255 247 237)" }}
+            iconStyle={{ background: "rgb(255 247 237)", color: "#151515" }}
+            icon={<feature.icon className="text-orange-500"/>}>
             <h4 className="vertical-timeline-element-title">
               {feature?.title}
             </h4>

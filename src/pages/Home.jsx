@@ -1,4 +1,7 @@
 // import Hero from '@/components/Hero'
+import AllFeatures from "@/components/AllFeatures";
+import Demos from "@/components/Demos";
+// import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import SetupProcess from "@/components/SetupProcess";
 import ShortFeatures from "@/components/ShortFeatures";
@@ -9,11 +12,13 @@ const Home = () => {
   return (
     <div>
       <Navbar />
+      {/* <Hero/> */}
       <Test />
       <ShortFeatures />
-      {/* <Hero/> */}
+      <Demos/>
       <WhyUs />
-      <SetupProcess/>
+      <SetupProcess />
+      <AllFeatures />
     </div>
   );
 };
