@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply px-4 lg:px-10 max-w-7xl mx-auto;
+}
+
+.text-primary{
+@apply text-orange-500
+}
+
+.text-secondary{
+@apply text-[#151515]
+}
+
+.bg-primary{
+@apply bg-orange-500
+}
+
+.active {
+  @apply text-base font-medium tracking-wide hover:text-orange-500 transition-colors hover:max-md:bg-orange-50 duration-200 w-full p-2 whitespace-nowrap;
+}
+
+
+@layer base {
+  h1 {
+    @apply lg:text-6xl text-5xl font-bold;
+  }
+  h2 {
+    @apply lg:text-5xl text-4xl font-bold;
+  }
+  h3 {
+    @apply lg:text-4xl text-3xl font-bold;
+  }
+  h4 {
+    @apply lg:text-3xl text-2xl font-bold;
+  }
+  h5 {
+    @apply lg:text-2xl text-xl font-bold;
+  }
+  h6 {
+    @apply lg:text-xl text-lg font-bold;
+  }
+}
+
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: darkslategrey;
+  border-radius: 3.5px; /* Half of the width to make it rounded */
+}
+
+/* Add a pseudo-element for the rounded corners of the thumb */
+::-webkit-scrollbar-thumb:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background-color: #fde8c0;
+  border-radius: 5px;
+}
