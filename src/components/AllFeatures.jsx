@@ -27,7 +27,7 @@ const features = [
     title: "ডেলিভারি ম্যানেজমেন্ট",
     description:
       "আমাদের রয়েছে ওয়ান ক্লিক কুরিয়ার ইন্ট্রিগ্রেটেড সিস্টেম (পাঠাও, স্টিডফাস্ট, RedX)",
-    img: "/src/assets/features//payment2.png",
+    img: "/src/assets/features/delivery.png",
   },
   {
     title: "অর্ডার ম্যানেজমেন্ট",
@@ -38,7 +38,9 @@ const features = [
 
 const AllFeatures = () => {
   return (
-    <section id="features" className="container lg:pt-28 pt-24 text-secondary text-center">
+    <section
+      id="features"
+      className="container lg:pt-28 pt-24 text-secondary text-center">
       <h3>
         আমাদের <span className="text-primary">ফিচারসমূহ</span>
       </h3>
@@ -48,7 +50,7 @@ const AllFeatures = () => {
             key={index}
             className="border px-4 py-6 rounded-xl hover:bg-orange-50/80 duration-500">
             <img
-              className="w-24 h-20 object-cover mx-auto "
+              className="w-32 h-24 object-cover mx-auto "
               src={feature?.img}
               alt=""
             />

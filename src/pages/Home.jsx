@@ -1,8 +1,10 @@
 // import Hero from '@/components/Hero'
 import AllFeatures from "@/components/AllFeatures";
 import Demos from "@/components/Demos";
+import MostBenefits from "@/components/MostBenefits";
 // import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import OurAchievements from "@/components/OurAchievements";
 import SetupProcess from "@/components/SetupProcess";
 import ShortFeatures from "@/components/ShortFeatures";
 import Test from "@/components/Test";
@@ -19,6 +21,8 @@ const Home = () => {
       <WhyUs />
       <SetupProcess />
       <AllFeatures />
+      <OurAchievements/>
+      <MostBenefits/>
     </div>
   );
 };
