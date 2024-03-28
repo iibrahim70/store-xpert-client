@@ -1,7 +1,7 @@
 const MostBenefits = () => {
   return (
     <section className="lg:mt-28 mt-24">
-      <div className="flex flex-col items-center justify-center border-orange-500 bg-white border-x-8 rounded-md px-4 py-8">
+      <div className="flex flex-col items-center justify-center border-orange-500 bg-orange-50 border-x-8 rounded-md p-4 my-5 w-fit mx-auto">
         <h3 className="leading-normal">
           সর্বনিম্ন মার্কেটিং খরচে{" "}
           <span className="text-primary">সর্বোচ্চ সেল</span> জেনারেট
@@ -22,7 +22,7 @@ const MostBenefits = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+              allowFullScreen></iframe>
           </div>
         </div>
       </div>
