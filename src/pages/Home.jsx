@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import OurAchievements from "@/components/OurAchievements";
 import SetupProcess from "@/components/SetupProcess";
 import ShortFeatures from "@/components/ShortFeatures";
+import SupremeFAQ from "@/components/SupremeFAQ";
 import Test from "@/components/Test";
 import WhyUs from "@/components/WhyUs";
 
@@ -23,6 +24,7 @@ const Home = () => {
       <SetupProcess />
       <AllFeatures />
       <OurAchievements/>
+      <SupremeFAQ/>
       <MostBenefits/>
       <Footer/>
     </div>
