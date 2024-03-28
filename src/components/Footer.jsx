@@ -1,0 +1,78 @@
+import { IoCall } from "react-icons/io5";
+import { FaFacebookSquare } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { HiUserGroup } from "react-icons/hi2";
+
+import { MdEmail } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+
+const Footer = () => {
+  return (
+    <footer className="lg:mt-28 mt-24 bg-gray-100">
+      <div className=" container  relative">
+        <div className="absolute -top-12 left-0 right-0 bg-orange-200 text-black py-6 rounded-xl flex items-baseline justify-center gap-5">
+          <h3>Our Communities: </h3>
+          <div className="flex items-center gap-5">
+            <div className="hover:text-orange-500 ">
+              <FaFacebookSquare className=" text-2xl" />
+            </div>
+            <div className="hover:text-orange-500 ">
+              <AiFillInstagram className=" text-2xl" />
+            </div>
+            <div className="hover:text-orange-500 ">
+              <HiUserGroup className=" text-2xl" />
+            </div>
+          </div>
+        </div>
+
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-6 justify-between py-20">
+          <div>
+            <img
+              className="lg:h-8 h-7 mr-9"
+              src="/src/assets/logos/logo-orange.png"
+              alt="StoreXpert"
+            />
+            <h6 className="leading-normal mt-2">
+              স্থায়ী বিজনেস পরিকল্পনা সফল করতে{" "}
+              <span className="text-primary">অনলাইন শপ</span>
+            </h6>
+            <p className="text-secondary mt-2">
+              ট্রাফিককে কাস্টমারে কনভার্ট করার জন্য ডিজাইনকরা সর্বাধুনিক ফানেল ও
+              সর্বাধিক সিকিউরিটিযুক্ত অনলাইন শপ বুঝে নিতে নিচের বাটনে ক্লিক
+              করুন।
+            </p>
+          </div>
+          <div className="lg:mx-auto">
+            <h6>Information</h6>
+            <ul className="mt-4">
+              <li>Terms of Use</li>
+              <li>Privacy Policy</li>
+              <li>Refund Policy</li>
+              <li>Terms & Conditions of Sales</li>
+            </ul>
+          </div>
+
+          <div className="">
+            <h6>Contact Us</h6>
+            <ul className="mt-4 grid grid-cols-1 items-start gap-[6px]">
+              <li className="flex items-baseline gap-2">
+                <IoCall className="text-primary text-lg" />
+                <p>+880 1950-606020</p>
+              </li>
+              <li className="flex items-baseline gap-2">
+                <MdEmail className="text-primary text-lg" />
+                <p>apurbahasanj@gmail.com</p>
+              </li>
+              <li className="flex items-baseline gap-2 ">
+                <FaLocationDot className="text-primary text-lg" />
+                <p>R-25 H-10 Block-Alobdhi Road Pallabi Mirpur-12 Dhaka 1216</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
