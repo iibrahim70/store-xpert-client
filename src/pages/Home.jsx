@@ -14,7 +14,7 @@ import WhyUs from "@/components/WhyUs";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Navbar />
       {/* <Hero/> */}
       <Test />
