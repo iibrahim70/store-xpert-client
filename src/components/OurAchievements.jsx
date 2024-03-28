@@ -47,7 +47,7 @@ const OurAchievements = () => {
                 index == 2 && "col-span-2"
               } shadow-md flex items-center justify-center gap-2 px-4 py-6 rounded-xl bg-white hover:bg-orange-50/80 duration-500`}>
               <div className="border rounded-md">
-              <benefit.icon className="text-primary text-4xl m-3" />
+              <benefit.icon className="text-primary md:text-4xl text-2xl sm:m-3 m-2" />
               </div>
               <div>
                 <h4 className="mb-1">{benefit?.value}</h4>

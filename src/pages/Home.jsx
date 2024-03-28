@@ -1,6 +1,7 @@
 // import Hero from '@/components/Hero'
 import AllFeatures from "@/components/AllFeatures";
 import Demos from "@/components/Demos";
+import Footer from "@/components/Footer";
 import MostBenefits from "@/components/MostBenefits";
 // import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -23,6 +24,7 @@ const Home = () => {
       <AllFeatures />
       <OurAchievements/>
       <MostBenefits/>
+      <Footer/>
     </div>
   );
 };
