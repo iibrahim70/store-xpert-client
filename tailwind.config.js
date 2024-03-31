@@ -10,6 +10,11 @@ export default {
   prefix: "",
   theme: {
     extend: {
+      colors: {
+        primary: "#6C63FF",
+        "primary-color": "slate-600",
+        : "#FAFCFF"
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

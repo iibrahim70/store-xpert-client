@@ -1,32 +1,33 @@
-// import Hero from '@/components/Hero'
+// import Hero from "@/components/Hero";
+import Test2 from "@/components/Test2";
+import Navbar from "@/components/Navbar";
 import AllFeatures from "@/components/AllFeatures";
 import Demos from "@/components/Demos";
 import Footer from "@/components/Footer";
 import MostBenefits from "@/components/MostBenefits";
-// import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 import OurAchievements from "@/components/OurAchievements";
 import SetupProcess from "@/components/SetupProcess";
 import ShortFeatures from "@/components/ShortFeatures";
 import SupremeFAQ from "@/components/SupremeFAQ";
-import Test from "@/components/Test";
 import WhyUs from "@/components/WhyUs";
+import Marketing from "@/components/Marketing";
 
 const Home = () => {
   return (
     <div className="">
       <Navbar />
-      {/* <Hero/> */}
-      <Test />
+      {/* <Hero /> */}
+      <Test2 />
       <ShortFeatures />
-      <Demos/>
+      <Demos />
       <WhyUs />
       <SetupProcess />
+      <Marketing/>
       <AllFeatures />
-      <OurAchievements/>
-      <SupremeFAQ/>
-      <MostBenefits/>
-      <Footer/>
+      <OurAchievements />
+      <SupremeFAQ />
+      <MostBenefits />
+      <Footer />
     </div>
   );
 };

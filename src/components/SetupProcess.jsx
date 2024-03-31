@@ -1,9 +1,9 @@
 const SetupProcess = () => {
   return (
-    <section id="setup-process" className="container lg:pt-28 pt-24 text-center">
-      <h3>
-        ওয়েবসাইট <span className="text-primary">সেটাপ প্রসেস</span>
-      </h3>
+    <section
+      id="setup-process"
+      className="container lg:pt-28 pt-24 text-center">
+      <h3>ওয়েবসাইট সেটাপ প্রসেস</h3>
       <img
         className="lg:block hidden"
         src="https://storex.com.bd/imgs/pages/storexInfoGraphicsWeb.png"

@@ -40,22 +40,22 @@ const AllFeatures = () => {
   return (
     <section
       id="features"
-      className="container lg:pt-28 pt-24 text-secondary text-center">
-      <h3>
+      className="container lg:pt-28 pt-24 text-center">
+      <h3 className="text-slate-950">
         আমাদের <span className="text-primary">ফিচারসমূহ</span>
       </h3>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      <div className="mt-10  grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {features?.map((feature, index) => (
           <div
             key={index}
-            className="border px-4 py-6 rounded-xl hover:bg-orange-50/80 duration-500">
+            className="border px-4 py-6 rounded-xl hover:shadow-md duration-500">
             <img
-              className="w-32 h-24 object-cover mx-auto "
+              className="w-32 object-contain mx-auto "
               src={feature?.img}
               alt=""
             />
             <h6 className="mt-8 mb-2 drop-shadow-lg">{feature?.title}</h6>
-            <p className="drop-shadow-lg text-slate-600">
+            <p className="drop-shadow-lg text-slate-600 text-slate-600">
               {feature?.description}
             </p>
           </div>

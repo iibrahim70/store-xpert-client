@@ -11,18 +11,18 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer id="contact-us" className="lg:pt-28 pt-32 ">
-      <div className="bg-orange-50">
+      <div className="bg-slate-900 text-white">
         <div className=" container  relative">
-          <div className="absolute -top-12 left-0 right-0 bg-orange-200 text-black py-6 mx-5 rounded-xl flex items-baseline justify-center gap-5">
+          <div className="absolute -top-12 left-0 right-0 bg-linea text-black py-6 mx-5 rounded-xl flex max-md:flex-col  items-center justify-center gap-5 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100">
             <h3>Our Communities: </h3>
             <div className="flex items-center gap-5">
-              <div className="hover:text-orange-500">
+              <div className="hover:text-[#6C63FF]">
                 <FaFacebookSquare className=" text-3xl" />
               </div>
-              <div className="hover:text-orange-500 ">
+              <div className="hover:text-[#6C63FF] ">
                 <AiFillInstagram className=" text-3xl" />
               </div>
-              <div className="hover:text-orange-500 ">
+              <div className="hover:text-[#6C63FF] ">
                 <HiUserGroup className=" text-3xl" />
               </div>
             </div>
@@ -32,14 +32,13 @@ const Footer = () => {
             <div>
               <img
                 className="lg:h-8 h-7 mr-9"
-                src="/src/assets/logos/logo-orange.png"
+                src="/src/assets/logos/logo-white-blue.png"
                 alt="StoreXpert"
               />
               <p className="leading-normal text-base mt-2">
-                স্থায়ী বিজনেস পরিকল্পনা সফল করতে{" "}
-                <span className="text-primary">অনলাইন শপ</span>
+                স্থায়ী বিজনেস পরিকল্পনা সফল করতে অনলাইন শপ
               </p>
-              <p className="text-secondary mt-2">
+              <p className="mt-2">
                 ট্রাফিককে কাস্টমারে কনভার্ট করার জন্য ডিজাইনকরা সর্বাধুনিক ফানেল
                 ও সর্বাধিক সিকিউরিটিযুক্ত অনলাইন শপ বুঝে নিতে নিচের বাটনে ক্লিক
                 করুন।
@@ -76,7 +75,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-orange-300 font-medium py-4 border-t-2 border-slate-300">
+        <div className="bg-slate-950  font-medium py-4 border-t-2 border-slate-300">
           <div className=" container flex max-md:flex-col gap-y-3 items-center justify-between">
             <p>
               Copyright &#169; {currentYear} StoreXpert.com. All Rights
@@ -86,7 +85,7 @@ const Footer = () => {
               to="https://apurbahasanj.netlify.app/"
               target="blank"
               title="CyberFlux Ltd."
-              className="hover:underline">
+              className="hover:underline hover:text-red-400">
               Website developed by CyberFlux Ltd.
             </Link>
           </div>
