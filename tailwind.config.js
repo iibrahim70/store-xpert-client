@@ -12,8 +12,7 @@ export default {
     extend: {
       colors: {
         primary: "#6C63FF",
-        "primary-color": "slate-600",
-        : "#FAFCFF"
+        secondary: "#FAFCFF",
       },
       keyframes: {
         "accordion-down": {

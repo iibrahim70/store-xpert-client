@@ -5,6 +5,7 @@ import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 
 import { GiCrossedBones } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const navItems = [
   {
@@ -48,7 +49,11 @@ const BarItems = () => (
         <BiSolidPhoneCall className="text-primary lg:text-3xl text-2xl" />
         <p className="lg:text-lg text-base font-medium">+880 1950-606020</p>
       </div>
-      <Button  size="md" className=" max-lg:w-full">Login</Button>
+      <Link to="/sign-in">
+        <Button size="md" className=" max-lg:w-full">
+          Login
+        </Button>
+      </Link>
     </div>
   </>
 );
