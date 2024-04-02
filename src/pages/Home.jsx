@@ -11,6 +11,7 @@ import ShortFeatures from "@/components/ShortFeatures";
 import SupremeFAQ from "@/components/SupremeFAQ";
 import WhyUs from "@/components/WhyUs";
 import Marketing from "@/components/Marketing";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   return (
@@ -22,11 +23,12 @@ const Home = () => {
       <Demos />
       <WhyUs />
       <SetupProcess />
-      <Marketing/>
+      <Marketing />
       <AllFeatures />
       <OurAchievements />
       <SupremeFAQ />
       <MostBenefits />
+      <Testimonials />
       <Footer />
     </div>
   );

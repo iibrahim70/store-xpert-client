@@ -15,8 +15,8 @@ const SignUp = () => {
   };
 
   return (
-    <section className="grid lg:grid-cols-2 grid-cols-1 min-h-dvh">
-      <div className="bg-primary text-white overflow-hidden p-5">
+    <section className="flex max-lg:flex-col lg:min-h-dvh">
+      <div className="bg-primary lg:w-2/5 w-full text-white overflow-hidden p-5">
         <h4>StoreXpert</h4>
         <div className="h-full pb-8 text-center flex flex-col items-center justify-center">
           <h1 className="my-8">Welcome Back!</h1>
@@ -35,7 +35,7 @@ const SignUp = () => {
       </div>
 
       {/* sign up form */}
-      <div className="flex flex-col text-center items-center justify-center md:p-10 pb-10">
+      <div className="lg:w-3/5 w-full flex flex-col text-center items-center justify-center md:p-10 pb-10">
         <h1 className="text-primary max-md:mt-8">Create Account</h1>
         <p className="text-gray-500 mt-8">
           Please provide your verified information.
