@@ -14,7 +14,7 @@ const navItems = [
   },
   {
     id: "why-us",
-    name: "Why Us?",
+    name: "Why Us",
   },
   {
     id: "setup-process",

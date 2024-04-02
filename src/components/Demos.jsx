@@ -1,16 +1,18 @@
 import { Button } from "./ui/button";
 import { PiEye } from "react-icons/pi";
+import img1 from "/src/assets/demos/chomotkar.png";
+// import img2 from "/src/assets/demos/bisrto-boss.png";
 
 const demos = [
   {
     _id: "1",
     title: "template- 1",
-    img: "/src/assets/demos/chomotkarfashion.png",
+    img: img1,
   },
   {
     _id: "2",
     title: "template- 2",
-    img: "/src/assets/demos/bisrto-boss.png",
+    img: img1,
   },
   {
     _id: "3",
