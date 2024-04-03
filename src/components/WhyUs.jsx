@@ -40,28 +40,30 @@ const features = [
 
 const WhyUs = () => {
   return (
-    <section id="why-us" className="container lg:pt-28 pt-24">
-      <div className="rounded-xl flex max-lg:flex-col justify-between gap-10 items-center lg:p-16 sm:p-7 p-5 bg-gradient-to-r from-rose-50/60 via-purple-100/60 to-indigo-50/60 duration-300">
-        <div>
-          <h4 className="leading-normal">
-            কেন StoreXpert এর কাছ থেকে ওয়েবসাইট নিবেন?
-          </h4>
-          <ul className="mt-5 grid grid-cols-1 gap-8">
-            {features.map((feature, index) => (
-              <li key={index} className="">
-                <div>
-                  <h6>{feature?.title}</h6>
-                  <p className="text-slate-600">{feature?.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <img
+    <section id="why-us" className=" lg:pt-[73px] pt-14  mt-10">
+      <div className="py-10 bg-gradient-to-b from-rose-50/60 via-purple-100/60 to-indigo-50/10 duration-300">
+        <div className="rounded-xl container flex max-lg:flex-col justify-between gap-10 items-center lg:p-16 sm:p-7 p-5">
+          <div>
+            <h4 className="leading-normal">
+              কেন StoreXpert এর কাছ থেকে ওয়েবসাইট নিবেন?
+            </h4>
+            <ul className="mt-5 grid grid-cols-1 gap-8">
+              {features.map((feature, index) => (
+                <li key={index} className="">
+                  <div>
+                    <h6>{feature?.title}</h6>
+                    <p className="text-slate-600">{feature?.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <img
             className="max-w-md w-full rounded-2xl"
             src="/src/assets/others/why-us.jpg"
             alt=""
           />
+        </div>
       </div>
     </section>
   );

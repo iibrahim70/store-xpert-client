@@ -39,7 +39,11 @@ const BarItems = () => (
     />
     <div className="flex lg:items-center justify-center items-start max-lg:flex-col lg:gap-2">
       {navItems.map((item) => (
-        <NavLink key={item?.id} to={"#" + item?.id} smooth className="active">
+        <NavLink
+          key={item?.id}
+          to={`/#${item?.id}`}
+          smooth
+          className="active">
           {item?.name}
         </NavLink>
       ))}
@@ -92,7 +96,7 @@ const Navbar = () => {
         <div className="lg:hidden flex items-center justify-between">
           <img
             className="lg:h-6 h-5 mr-9"
-            src="/src/assets/logos/logo-orange.png"
+            src="/src/assets/logos/storexpert-blue.png"
             alt="StoreXpert"
           />
           <Button

@@ -2,8 +2,10 @@ import { Button } from "./ui/button";
 
 const Marketing = () => {
   return (
-    <section id="why-us" className="container lg:pt-28 pt-24">
-      <div className="rounded-xl grid lg:grid-cols-2 grid-cols-1  justify-between gap-10 items-center">
+    <section
+      id="why-us"
+      className="lg:mt-24 mt-16 py-10 bg-gradient-to-br from-rose-50/60 via-purple-50/60 to-indigo-50/10 duration-300">
+      <div className="container rounded-xl grid lg:grid-cols-2 grid-cols-1  justify-between gap-10 items-center">
         <div className="w-full">
           <h3 className="leading-normal">
             সর্বনিম্ন খরচে সর্বোচ্চ সেল জেনারেট
@@ -20,7 +22,7 @@ const Marketing = () => {
           </ul>
           <Button className="mt-6">Contact Now</Button>
         </div>
-        <div className="lg:p-10 p-7 rounded-2xl bg-gradient-to-r from-rose-50/60 via-purple-100/60 to-indigo-50/60 duration-300">
+        <div className="lg:p-10 p-7 rounded-2xl">
           <img
             className="max-w-2xl w-full rounded-2xl "
             src="/src/assets/others/sm-marketing.jpg"

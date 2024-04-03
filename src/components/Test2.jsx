@@ -2,6 +2,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { HashLink as NavLink } from "react-router-hash-link";
 
 import { Button } from "./ui/button";
+// import MostBenefits from "./MostBenefits";
 
 const Test2 = () => {
   return (
@@ -43,6 +44,7 @@ const Test2 = () => {
               alt=""
             />
           </div>
+          {/* <MostBenefits/> */}
           {/* <div className="grid grid-cols-8 mx-5 mt-16">
           {demos?.map((demo) => (
             <div
