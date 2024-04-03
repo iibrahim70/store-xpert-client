@@ -1,10 +1,6 @@
-// import Hero from "@/components/Hero";
 import Test2 from "@/components/Test2";
-import Navbar from "@/components/Navbar";
 import AllFeatures from "@/components/AllFeatures";
-import Demos from "@/components/Demos";
-import Footer from "@/components/Footer";
-import MostBenefits from "@/components/MostBenefits";
+import Templates from "@/components/Templates";
 import OurAchievements from "@/components/OurAchievements";
 import SetupProcess from "@/components/SetupProcess";
 import ShortFeatures from "@/components/ShortFeatures";
@@ -15,21 +11,18 @@ import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   return (
-    <div className="">
-      <Navbar />
+    <div className="bg-gray-50/50">
       {/* <Hero /> */}
       <Test2 />
       <ShortFeatures />
-      <Demos />
+      <Templates />
       <WhyUs />
       <SetupProcess />
       <Marketing />
       <AllFeatures />
       <OurAchievements />
       <SupremeFAQ />
-      <MostBenefits />
       <Testimonials />
-      <Footer />
     </div>
   );
 };

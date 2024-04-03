@@ -43,7 +43,7 @@
     @apply lg:text-2xl text-xl font-bold drop-shadow;
   }
   h6 {
-    @apply lg:text-xl text-lg font-bold drop-shadow;
+    @apply lg:text-xl md:text-base text-sm font-bold drop-shadow;
   }
 }
 
