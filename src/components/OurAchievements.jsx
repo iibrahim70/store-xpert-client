@@ -1,7 +1,7 @@
-import { HiMiniUsers } from "react-icons/hi2";
+// import { HiMiniUsers } from "react-icons/hi2";
 
-import { GrSystem } from "react-icons/gr";
-import { ImHappy2 } from "react-icons/im";
+// import { GrSystem } from "react-icons/gr";
+// import { ImHappy2 } from "react-icons/im";
 
 const benefits = [
   {
@@ -45,7 +45,7 @@ const OurAchievements = () => {
                 index == 2 && "col-span-2"
               } flex items-center justify-center gap-2 px-4 py-6 rounded-xl bg-white shadow-sm hover:shadow-md duration-500`}>
               <div className="border rounded-md">
-                <img src={benefit?.img} className="text-primary w-8 sm:m-3 m-2" />
+                <img src={benefit?.img} className="text-primary w-8 m-2" />
               </div>
               <div>
                 <h4 className="mb-1 text-primary">{benefit?.value}</h4>
