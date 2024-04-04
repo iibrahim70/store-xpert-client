@@ -2,31 +2,34 @@
 
 // import { GrSystem } from "react-icons/gr";
 // import { ImHappy2 } from "react-icons/im";
-
+import users from "/src/assets/others/users.png"
+import satisfied from "/src/assets/others/smile.png"
+import upgrades from "/src/assets/others/software.png"
+import laptop from "/src/assets/others/customize.jpg"
 const benefits = [
   {
     title: "এক্টিভ ইউজার",
     value: "৩৫০+",
-    img: "/src/assets/others/users.png",
+    img: users,
   },
   {
     title: "সেটিস্ফাইড ক্লায়েন্",
     value: "৯৯.৯৯%",
-    img: "/src/assets/others/smile.png",
+    img: satisfied,
   },
   {
     title: "সিস্টেম আপডেট",
     value: "১৬০+",
-    img: "/src/assets/others/software.png",
+    img: upgrades,
   },
-];
+]
 
 const OurAchievements = () => {
   return (
     <section className="container flex max-lg:flex-col items-center justify-center lg:gap-14 gap-6 lg:mt-28 mt-24 lg:p-10 sm:p-7 p-5 rounded-xl gap-y-7  bg-gradient-to-r from-indigo-50/60 via-rose-100/60 to-indigo-50/60 duration-300">
       <img
         className="rounded-3xl max-md:max-w-full shadow-lg max-w-lg"
-        src="/src/assets/others/customize.jpg"
+        src={laptop}
         alt=""
       />
       <div className="">

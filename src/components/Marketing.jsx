@@ -1,4 +1,5 @@
 import { Button } from "./ui/button";
+import ladyImg from "/src/assets/icons/check.png";
 
 const Marketing = () => {
   const services = [
@@ -40,7 +41,7 @@ const Marketing = () => {
           <ul className="grid grid-cols-1 gap-4 mt-4 text-slate-800">
             {services.map((service, i) => (
               <li key={i} className="flex items-center gap-2">
-                <img className="w-6" src="/src/assets/icons/check.png" alt="" />
+                <img className="w-6" src={ladyImg} alt="lady img" />
                 <p>{service.title}</p>
               </li>
             ))}

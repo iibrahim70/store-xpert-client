@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import emailImg from "/src/assets/icons/email.png"
+import passwordImg from "/src/assets/icons/password.png"
 
 const SignIn = () => {
   const {
@@ -12,6 +14,7 @@ const SignIn = () => {
 
   const onSubmit = (data) => {
     const { name, email, password, confirmPassword } = data;
+
   };
 
   return (
@@ -34,7 +37,7 @@ const SignIn = () => {
               <label className="flex items-center bg-gray-200 w-full">
                 <img
                   className="w-12 p-3"
-                  src="/src/assets/icons/email.png"
+                  src={emailImg}
                   alt=""
                 />
                 <input
@@ -54,7 +57,7 @@ const SignIn = () => {
               <label className="flex items-center bg-gray-200 w-full">
                 <img
                   className="w-12 p-3"
-                  src="/src/assets/icons/password.png"
+                  src={passwordImg}
                   alt=""
                 />
                 <input
