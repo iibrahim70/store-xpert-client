@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { useEffect, useState } from "react";
+import logo from "/src/assets/logos/storexpert-blue.png"
 
 import { GiCrossedBones } from "react-icons/gi";
 import { Link } from "react-router-dom";
@@ -34,7 +35,7 @@ const BarItems = () => (
   <>
     <img
       className="lg:h-6  lg:block hidden mr-9"
-      src="/src/assets/logos/storexpert-blue.png"
+      src={logo}
       alt="StoreXpert"
     />
     <div className="flex lg:items-center justify-center items-start max-lg:flex-col lg:gap-2">
@@ -96,7 +97,7 @@ const Navbar = () => {
         <div className="lg:hidden flex items-center justify-between">
           <img
             className="lg:h-6 h-5 mr-9"
-            src="/src/assets/logos/storexpert-blue.png"
+            src={logo}
             alt="StoreXpert"
           />
           <Button

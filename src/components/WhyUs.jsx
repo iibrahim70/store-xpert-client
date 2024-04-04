@@ -3,6 +3,7 @@ import { MdOutlineElectricBolt } from "react-icons/md";
 import { GrSecure } from "react-icons/gr";
 import { FaMoneyCheck } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
+import whyUsImg from "/src/assets/others/why-us.jpg";
 
 // import {
 //   VerticalTimeline,
@@ -60,8 +61,8 @@ const WhyUs = () => {
           </div>
           <img
             className="max-w-md w-full rounded-2xl"
-            src="/src/assets/others/why-us.jpg"
-            alt=""
+            src={whyUsImg}
+            alt="lady Img"
           />
         </div>
       </div>

@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import userImg from "/src/assets/icons/user.png";
+import phoneImg from "/src/assets/icons/phone.png";
+import emailImg from "/src/assets/icons/email.png";
+import passwordImg from "/src/assets/icons/password.png";
 
 const SignUp = () => {
   const {
@@ -11,7 +15,7 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { name, email, password, confirmPassword } = data;
+    const { fullName, email, password, confirmPassword } = data;
   };
 
   return (
@@ -46,18 +50,32 @@ const SignUp = () => {
           {/* name */}
           <div className="w-full">
             <label className="flex items-center bg-gray-200 w-full">
-              <img
-                className="w-12 p-2"
-                src="/src/assets/icons/user.png"
-                alt=""
-              />
+              <img className="w-12 p-2" src={userImg} alt="" />
               <input
+                type="text"
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Name"
-                {...register("name", { required: true })}
+                {...register("fullName", { required: true })}
               />
             </label>
-            {errors.name && (
+            {errors.fullName && (
+              <p className="text-red-400 text-xs font-semibold text-left">
+                Name is required
+              </p>
+            )}
+          </div>
+          {/* phone */}
+          <div className="w-full">
+            <label className="flex items-center bg-gray-200 w-full">
+              <img className="w-11 p-2" src={phoneImg} alt="" />
+              <input
+                type="text"
+                className="p-4 bg-gray-200 focus:outline-none w-full"
+                placeholder="Phone Number"
+                {...register("phoneNumber", { required: true })}
+              />
+            </label>
+            {errors.fullName && (
               <p className="text-red-400 text-xs font-semibold text-left">
                 Name is required
               </p>
@@ -67,12 +85,9 @@ const SignUp = () => {
           {/* email */}
           <div className="w-full">
             <label className="flex items-center bg-gray-200 w-full">
-              <img
-                className="w-12 p-3"
-                src="/src/assets/icons/email.png"
-                alt=""
-              />
+              <img className="w-12 p-3" src={emailImg} alt="" />
               <input
+                type="email"
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Email"
                 {...register("email", { required: true })}
@@ -87,12 +102,9 @@ const SignUp = () => {
           {/* password */}
           <div className="w-full">
             <label className="flex items-center bg-gray-200 w-full">
-              <img
-                className="w-12 p-3"
-                src="/src/assets/icons/password.png"
-                alt=""
-              />
+              <img className="w-12 p-3" src={passwordImg} alt="" />
               <input
+                type="password"
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Password"
                 {...register("password", { required: true })}
@@ -106,14 +118,11 @@ const SignUp = () => {
           </div>
 
           {/* Confirm Password */}
-          <div className="w-full">
+          {/* <div className="w-full">
             <label className="flex items-center bg-gray-200 w-full">
-              <img
-                className="w-12 p-3"
-                src="/src/assets/icons/password.png"
-                alt=""
-              />
+              <img className="w-12 p-3" src={passwordImg} alt="" />
               <input
+                type="password"
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Confirm Password"
                 {...register("confirmPassword", { required: true })}
@@ -124,7 +133,7 @@ const SignUp = () => {
                 Confirm password is required
               </p>
             )}
-          </div>
+          </div> */}
 
           <Button size="lg" className="rounded-full mx-auto">
             <input className="uppercase" type="submit" />
