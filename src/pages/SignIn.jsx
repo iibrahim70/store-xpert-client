@@ -17,11 +17,11 @@ const SignIn = () => {
   return (
     <section className="flex max-lg:flex-col-reverse lg:min-h-dvh">
       {/* sign in form */}
-      <div className="p-5 lg:w-3/5 w-full">
+      <div className="p-5 lg:w-3/5 w-full overflow-hidden">
         <h4 className="max-lg:hidden">
           Store<span className="text-primary">Xpert</span>
         </h4>
-        <div className="h-full overflow-hidden text-center flex flex-col items-center justify-center lg:p-10">
+        <div className="h-full text-center flex flex-col items-center justify-center lg:p-10">
           <h1 className="text-primary max-lg:mt-5">Sign in to Account</h1>
           <p className="text-gray-500 mt-8">
             Please provide your verified information.
