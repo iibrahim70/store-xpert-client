@@ -1,38 +1,45 @@
+import fast from "/src/assets/features/fast-loading.png";
+import productManagement from "/src/assets/features/product-management.png";
+import payment from "/src/assets/features/payment.png";
+import socialMedia from "/src/assets/features/social-media.png";
+import delivery from "/src/assets/features/back-office.png";
+import orderManagement from "/src/assets/features/inspection.png";
+
 const features = [
   {
     title: "সুপার ফাস্ট ওয়েবসাইট",
     description:
       "আপডেটেড টেকনোলজি ব্যাবহারের ফলে ওয়েবসাইট ১০০ মিলি সেকেন্ড এর মধ্যে লোড হতে সক্ষম",
-    img: "/src/assets/features/fast-loading.png",
+    img: fast,
   },
   {
     title: "প্রোডাক্ট ম্যানেজমেন্ট",
     description:
       "আমাদের রয়েছে কমপ্লিট প্রোডাক্ট ম্যানেজমেন্ট সিস্টেম - যে কোন ধরণের প্রোডাক্ট ম্যানেজ করতে পারবেন সহজেই",
-    img: "/src/assets/features/product-management.png",
+    img: productManagement,
   },
   {
     title: "পেমেন্ট গেটওয়ে",
     description:
       "আমাদের রয়েছে পেমেন্ট ইন্ট্রিগ্রেটেড সিস্টেম (বিকাশ, নগদ, রকেট, ssl comerz, amarpay)",
-    img: "/src/assets/features/payment.png",
+    img: payment,
   },
   {
     title: "ডিজিটাল মার্কেটিং ফ্রেন্ডলি",
     description:
       "গুগোল এনালিটিক্স, সার্ভার সাইড ট্যাগিং, ট্যাগ ম্যানেজার, কনভার্সন এপিআই সহ সকল সুবিধা আছে",
-    img: "/src/assets/features/social-media.png",
+    img: socialMedia,
   },
   {
     title: "ডেলিভারি ম্যানেজমেন্ট",
     description:
       "আমাদের রয়েছে ওয়ান ক্লিক কুরিয়ার ইন্ট্রিগ্রেটেড সিস্টেম (পাঠাও, স্টিডফাস্ট, RedX)",
-    img: "/src/assets/features/back-office.png",
+    img: delivery,
   },
   {
     title: "অর্ডার ম্যানেজমেন্ট",
     description: "আমাদের রয়েছে সম্পূর্ণ অটোমেটেড অর্ডার ম্যানেজমেন্ট সিস্টেম",
-    img: "/src/assets/features/inspection.png",
+    img: orderManagement,
   },
 ];
 
