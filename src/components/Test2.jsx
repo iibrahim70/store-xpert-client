@@ -15,7 +15,7 @@ const Test2 = () => {
               few clicks with ShopBase
             </h2> */}
             <h2 className="leading-snug max-sm:h-[107px] text-slate-800">
-              একটি লাভজনক ই-কমার্স ব্যবসা গড়ে তুলুন স্টোর এক্সপার্ট সাথে{" "}
+              একটি লাভজনক ই-কমার্স ব্যবসা গড়ে তুলুন স্টোর এক্সপার্টের সাথে{" "}
               <span className="bg-gradient-to-r from-indigo-500  to-rose-400 bg-clip-text text-transparent">
                 <Typewriter
                   words={["কয়েক ক্লিকে", "সর্বনিম্ন খরচে", "সহজ নিয়ন্ত্রণে!"]}

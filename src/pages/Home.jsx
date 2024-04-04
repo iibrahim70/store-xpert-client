@@ -8,6 +8,7 @@ import SupremeFAQ from "@/components/SupremeFAQ";
 import WhyUs from "@/components/WhyUs";
 import Marketing from "@/components/Marketing";
 import Testimonials from "@/components/Testimonials";
+import TemplateHighlights from "@/components/TemplateHighlights";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <OurAchievements />
       <SupremeFAQ />
       <Testimonials />
+      <TemplateHighlights/>
     </div>
   );
 };

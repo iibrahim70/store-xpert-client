@@ -17,14 +17,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: "/sign-in",
-        element: <SignIn />,
-      },
-      {
-        path: "/sign-up",
-        element: <SignUp />,
-      },
+
       {
         path: "/terms-of-use",
         element: <TermsOfUse />,
@@ -42,6 +35,14 @@ const router = createBrowserRouter([
         element: <TermsAndConditions />,
       },
     ],
+  },
+  {
+    path: "/sign-in",
+    element: <SignIn />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignUp />,
   },
 ]);
 

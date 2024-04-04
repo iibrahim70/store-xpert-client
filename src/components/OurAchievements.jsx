@@ -7,17 +7,17 @@ const benefits = [
   {
     title: "এক্টিভ ইউজার",
     value: "৩৫০+",
-    icon: HiMiniUsers,
+    img: "/src/assets/others/users.png",
   },
   {
     title: "সেটিস্ফাইড ক্লায়েন্",
     value: "৯৯.৯৯%",
-    icon: ImHappy2,
+    img: "/src/assets/others/smile.png",
   },
   {
     title: "সিস্টেম আপডেট",
     value: "১৬০+",
-    icon: GrSystem,
+    img: "/src/assets/others/software.png",
   },
 ];
 
@@ -45,10 +45,10 @@ const OurAchievements = () => {
                 index == 2 && "col-span-2"
               } flex items-center justify-center gap-2 px-4 py-6 rounded-xl bg-white shadow-sm hover:shadow-md duration-500`}>
               <div className="border rounded-md">
-                <benefit.icon className="text-primary md:text-4xl text-2xl sm:m-3 m-2" />
+                <img src={benefit?.img} className="text-primary w-8 sm:m-3 m-2" />
               </div>
               <div>
-                <h4 className="mb-1">{benefit?.value}</h4>
+                <h4 className="mb-1 text-primary">{benefit?.value}</h4>
                 <p className="drop-shadow-lg text-slate-600">
                   {benefit?.title}
                 </p>

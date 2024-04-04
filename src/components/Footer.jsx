@@ -75,6 +75,7 @@ const Footer = () => {
                     <Link to={link.url}>{link.text}</Link>
                   </li>
                 ))}
+        
               </ul>
             </div>
 
