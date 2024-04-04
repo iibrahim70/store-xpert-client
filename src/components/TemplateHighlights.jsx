@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from  "swiper/modules";
 
 import "./styles.css";
-import img from "../assets/banners/hero1.jpg";
+import img from "/src/assets/banners/laptop.svg";
 
 const imageUrls = [img, img, img, img, img, img, img, img, img];
 
