@@ -37,15 +37,14 @@ const BarItems = () => {
     localStorage.getItem("storeXpert")
   );
 
-
   // useEffect(() => {
   //   setAccessToken(localStorage.getItem("storeXpert"));
-  // }, [accessToken]); 
+  // }, [accessToken]);
 
   // Define the sign-out function
   const handleSignOut = () => {
     localStorage.removeItem("storeXpert");
-    setAccessToken(null); 
+    setAccessToken(null);
   };
   return (
     <>
@@ -71,14 +70,14 @@ const BarItems = () => {
           <p className="lg:text-lg text-base font-medium">+880 1950-606020</p>
         </div>
         {accessToken ? (
-          <Button onClick={handleSignOut} size="md" className="max-lg:w-full">
+          <Button onClick={handleSignOut} size="" className="max-lg:w-full">
             Sign Out
           </Button>
         ) : (
           <Link
             to="/sign-in"
-            className={cn(buttonVariants({ size: "md" }), "max-lg:w-full")}>
-            Login
+            className={cn(buttonVariants({ size: "lg" }), "max-lg:w-full")}>
+            <span className="-mt-[3px]">Login</span>
           </Link>
         )}
       </div>

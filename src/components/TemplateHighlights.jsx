@@ -11,7 +11,7 @@ const imageUrls = [img, img, img, img, img, img, img, img, img];
 
 const TemplateHighlights = () => {
   return (
-    <section className="container my-20">
+    <section className="container py-28">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

@@ -14,7 +14,7 @@ const Testimonials = () => {
 
 
   return (
-    <section className="lg:mt-24 mt-16 py-10 bg-gradient-to-r from-rose-50 via-purple-50 to-indigo-50">
+    <section className="lg:py-24 pt-16 py-10 bg-secondary">
       <h2 className="text-center">Testimonials</h2>
       <Marquee className="" pauseOnHover={true} autoFill={true} speed={20}>
         <div className="flex flex-col flex-wrap overflow-visible lg:gap-6 gap-5 items-center justify-center h-[550px] w-full pr-48 py-10">
