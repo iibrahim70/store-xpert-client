@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const Test2 = () => {
   return (
-    <header className="relative bg-[url('/src/assets/banners/hero1.jpg')] h-[550px] bg-fixed bg-cover bg-no-repeat bg-orange-200">
+    <header className="relative bg-[url('/src/assets/banners/hero1.jpg')]   rounded-full h-[550px] bg-fixed bg-cover bg-no-repeat bg-orange-200">
     <div className="absolute flex flex-col items-center justify-center top-0 left-0 right-0 h-full bg-slate-950 bg-opacity-45">
       <h2 className="text-white text-center leading-tight">
         ই-কমার্স ব্যবসা এখন <br />

@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import checkImg from "/src/assets/icons/check.png";
+import { IoCheckmarkCircle } from "react-icons/io5";
 import ladyImg from "/src/assets/others/sm-marketing.jpg";
 
 const Marketing = () => {
@@ -31,9 +31,7 @@ const Marketing = () => {
   ];
 
   return (
-    <section
-      id="why-us"
-      className="lg:mt-24 mt-16 py-10 bg-gradient-to-br from-rose-50/60 via-purple-50/60 to-indigo-50/10 duration-300">
+    <section id="why-us" className="py-10">
       <div className="container rounded-xl grid lg:grid-cols-2 grid-cols-1  justify-between gap-10 items-center">
         <div className="w-full">
           <h3 className="leading-normal">
@@ -42,7 +40,8 @@ const Marketing = () => {
           <ul className="grid grid-cols-1 gap-4 mt-4 text-slate-800">
             {services.map((service, i) => (
               <li key={i} className="flex items-center gap-2">
-                <img className="w-6" src={checkImg} alt="lady img" />
+                <IoCheckmarkCircle className="text-primary w-6 h-6" />
+
                 <p>{service.title}</p>
               </li>
             ))}

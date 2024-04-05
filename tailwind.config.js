@@ -7,12 +7,14 @@ export default {
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
   ],
+
+  // #6C63FF
   prefix: "",
   theme: {
     extend: {
       colors: {
-        primary: "#6C63FF",
-        secondary: "#FAFCFF",
+        primary: "#635bff",
+        secondary: "#fafcff",
       },
       keyframes: {
         "accordion-down": {
