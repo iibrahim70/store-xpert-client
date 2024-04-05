@@ -33,7 +33,6 @@ const SignIn = () => {
           setLoading(false);
 
           if (data?.success) {
-            console.log(data);
             console.log(data?.data?.accessToken);
             localStorage.setItem("storeXpert", data?.data?.accessToken);
             reset();

@@ -22,7 +22,6 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
-  console.log(errors.password);
 
   const onSubmit = (data) => {
     setLoading(true);
