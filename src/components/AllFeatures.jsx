@@ -46,29 +46,33 @@ const features = [
 
 const AllFeatures = () => {
   return (
-    <section
-      id="features"
-      className="container relative z-10 lg:pt-28 pt-24 text-center">
-      <h3 className="text-slate-950">
-        আমাদের <span className="text-primary">ফিচারসমূহ</span>
-      </h3>
-      <div className="absolute -z-10 top-0 right-1 max-lg:hidden">
-        <XMark />
-      </div>
-      <div className="mt-10  grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-        {features?.map((feature, index) => (
-          <div
-            key={index}
-            className="border px-4 py-6 rounded-xl shadow hover:shadow-xl duration-500 flex flex-col justify-between">
-            <img className="w-16 h-16 mx-auto mb-8" src={feature?.img} alt="" />
-            <div className="h-28 ">
-              <h6 className=" mb-2 drop-shadow-lg ">{feature?.title}</h6>
-              <p className="drop-shadow-lg text-slate-600">
-                {feature?.description}
-              </p>
+    <section id="features" className=" bg-secondary">
+      <div className="container relative z-10 py-24 text-center">
+        <h3 className="text-slate-950">
+          আমাদের <span className="text-primary">ফিচারসমূহ</span>
+        </h3>
+        <div className="absolute -z-10 top-0 right-1 max-lg:hidden">
+          <XMark />
+        </div>
+        <div className="mt-10  grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+          {features?.map((feature, index) => (
+            <div
+              key={index}
+              className="border bg-white px-4 py-6 rounded-xl shadow hover:shadow-2xl duration-500 flex flex-col justify-between">
+              <img
+                className="w-16 h-16 mx-auto mb-8"
+                src={feature?.img}
+                alt=""
+              />
+              <div className="h-28 ">
+                <h6 className=" mb-2 drop-shadow-lg ">{feature?.title}</h6>
+                <p className="drop-shadow-lg text-slate-600">
+                  {feature?.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

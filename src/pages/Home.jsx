@@ -12,7 +12,7 @@ import TemplateHighlights from "@/components/TemplateHighlights";
 
 const Home = () => {
   return (
-    <div className="bg-gray-50/50 select-none">
+    <div className="bg-white select-none">
       <Hero />
       <ShortFeatures />
       <Templates />
@@ -20,10 +20,10 @@ const Home = () => {
       <SetupProcess />
       <Marketing />
       <AllFeatures />
+      <TemplateHighlights />
       <OurAchievements />
       <SupremeFAQ />
       <Testimonials />
-      <TemplateHighlights/>
     </div>
   );
 };
