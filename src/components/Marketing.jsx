@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
-import ladyImg from "/src/assets/icons/check.png";
+import checkImg from "/src/assets/icons/check.png";
+import ladyImg from "/src/assets/others/sm-marketing.jpg";
 
 const Marketing = () => {
   const services = [
@@ -41,7 +42,7 @@ const Marketing = () => {
           <ul className="grid grid-cols-1 gap-4 mt-4 text-slate-800">
             {services.map((service, i) => (
               <li key={i} className="flex items-center gap-2">
-                <img className="w-6" src={ladyImg} alt="lady img" />
+                <img className="w-6" src={checkImg} alt="lady img" />
                 <p>{service.title}</p>
               </li>
             ))}
@@ -51,8 +52,8 @@ const Marketing = () => {
         <div className="lg:p-10 p-7 rounded-2xl">
           <img
             className="max-w-2xl w-full rounded-2xl "
-            src="/src/assets/others/sm-marketing.jpg"
-            alt=""
+            src={ladyImg}
+            alt="lady img"
           />
         </div>
       </div>

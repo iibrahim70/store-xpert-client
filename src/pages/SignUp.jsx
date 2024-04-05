@@ -1,21 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import userImg from "/src/assets/icons/user.png";
 import phoneImg from "/src/assets/icons/phone.png";
 import emailImg from "/src/assets/icons/email.png";
 import passwordImg from "/src/assets/icons/password.png";
+import { IoMdEye } from "react-icons/io";
+import { IoMdEyeOff } from "react-icons/io";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
+  const [passVisible, setPassVisible] = useState(false);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm();
+  console.log(errors.password);
 
   const onSubmit = (data) => {
-    const { fullName, email, password, confirmPassword } = data;
+    fetch("https://store-xpert-server.vercel.app/api/v1/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          reset();
+          toast.success(data.message);
+          navigate("/");
+        } else {
+          toast.error(data.message);
+
+          console.log("Success:", data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -72,12 +100,18 @@ const SignUp = () => {
                 type="text"
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Phone Number"
-                {...register("phoneNumber", { required: true })}
+                {...register("phoneNumber", {
+                  required: "Phone number is required", // Comma added here
+                  minLength: {
+                    value: 11,
+                    message: "Phone number must be 11 characters long", // Adjusted message
+                  },
+                })}
               />
             </label>
-            {errors.fullName && (
+            {errors.phoneNumber && (
               <p className="text-red-400 text-xs font-semibold text-left">
-                Name is required
+                {errors.phoneNumber.message}
               </p>
             )}
           </div>
@@ -90,29 +124,50 @@ const SignUp = () => {
                 type="email"
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Email"
-                {...register("email", { required: true })}
+                {...register("email", { required: "Email is required" })}
               />
             </label>
             {errors.email && (
               <p className="text-red-400 text-xs font-semibold text-left">
-                Email is required
+                {errors.email.message}
               </p>
             )}
           </div>
+
           {/* password */}
           <div className="w-full">
-            <label className="flex items-center bg-gray-200 w-full">
+            <label className="flex relative items-center bg-gray-200 w-full">
               <img className="w-12 p-3" src={passwordImg} alt="" />
               <input
-                type="password"
+                type={passVisible ? "text" : "password"}
                 className="p-4 bg-gray-200 focus:outline-none w-full"
                 placeholder="Password"
-                {...register("password", { required: true })}
+                {...register("password", {
+                  required: "Password is required",
+                  pattern: {
+                    value:
+                      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                    message:
+                      "Password must contain at least 8 characters, one special character, and one number",
+                  },
+                })}
               />
+
+              {passVisible ? (
+                <IoMdEye
+                  onClick={() => setPassVisible(!passVisible)}
+                  className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
+                />
+              ) : (
+                <IoMdEyeOff
+                  onClick={() => setPassVisible(!passVisible)}
+                  className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
+                />
+              )}
             </label>
             {errors.password && (
               <p className="text-red-400 text-xs font-semibold text-left">
-                Password is required
+                {errors.password.message}
               </p>
             )}
           </div>

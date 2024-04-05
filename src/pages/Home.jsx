@@ -12,7 +12,7 @@ import TemplateHighlights from "@/components/TemplateHighlights";
 
 const Home = () => {
   return (
-    <div className="bg-gray-50/50">
+    <div className="bg-gray-50/50 select-none">
       <Hero />
       <ShortFeatures />
       <Templates />
