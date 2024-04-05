@@ -23,7 +23,7 @@
 }
 
 .active {
-  @apply text-base font-medium tracking-wide hover:text-[#6C63FF] transition-colors hover:max-md:bg-purple-500 duration-200 w-full p-2 whitespace-nowrap;
+  @apply text-base font-medium tracking-wide hover:text-[#6C63FF] transition-colors hover:max-md:bg-primary/10 duration-200 w-full p-2 whitespace-nowrap;
 }
 
 @layer base {

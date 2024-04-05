@@ -1,12 +1,13 @@
 import { HashLink as NavLink } from "react-router-hash-link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { useEffect, useState } from "react";
-import logo from "/src/assets/logos/storexpert-blue.png"
+import logo from "/src/assets/logos/storexpert-blue.png";
 
 import { GiCrossedBones } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   {
@@ -31,37 +32,59 @@ const navItems = [
   },
 ];
 
-const BarItems = () => (
-  <>
-    <img
-      className="lg:h-6  lg:block hidden mr-9"
-      src={logo}
-      alt="StoreXpert"
-    />
-    <div className="flex lg:items-center justify-center items-start max-lg:flex-col lg:gap-2">
-      {navItems.map((item) => (
-        <NavLink
-          key={item?.id}
-          to={`/#${item?.id}`}
-          smooth
-          className="active">
-          {item?.name}
-        </NavLink>
-      ))}
-    </div>
-    <div className="lg:mt-0 mt-8 flex items-center lg:flex-row flex-col-reverse lg:justify-between gap-5">
-      <div className="flex items-center gap-3">
-        <BiSolidPhoneCall className="text-primary lg:text-3xl text-2xl" />
-        <p className="lg:text-lg text-base font-medium">+880 1950-606020</p>
+const BarItems = () => {
+  const [accessToken, setAccessToken] = useState(
+    localStorage.getItem("storeXpert")
+  );
+
+
+  // useEffect(() => {
+  //   setAccessToken(localStorage.getItem("storeXpert"));
+  // }, [accessToken]); 
+
+  // Define the sign-out function
+  const handleSignOut = () => {
+    localStorage.removeItem("storeXpert");
+    setAccessToken(null); 
+  };
+  return (
+    <>
+      <img
+        className="lg:h-6  lg:block hidden mr-9"
+        src={logo}
+        alt="StoreXpert"
+      />
+      <div className="flex lg:items-center justify-center items-start max-lg:flex-col lg:gap-2">
+        {navItems.map((item) => (
+          <NavLink
+            key={item?.id}
+            to={`/#${item?.id}`}
+            smooth
+            className="active">
+            {item?.name}
+          </NavLink>
+        ))}
       </div>
-      <Link to="/sign-in">
-        <Button size="md" className=" max-lg:w-full">
-          Login
-        </Button>
-      </Link>
-    </div>
-  </>
-);
+      <div className="lg:mt-0 mt-8 flex items-center lg:flex-row flex-col-reverse lg:justify-between gap-5">
+        <div className="flex items-center gap-3">
+          <BiSolidPhoneCall className="text-primary lg:text-3xl text-2xl" />
+          <p className="lg:text-lg text-base font-medium">+880 1950-606020</p>
+        </div>
+        {accessToken ? (
+          <Button onClick={handleSignOut} size="md" className="max-lg:w-full">
+            Sign Out
+          </Button>
+        ) : (
+          <Link
+            to="/sign-in"
+            className={cn(buttonVariants({ size: "md" }), "max-lg:w-full")}>
+            Login
+          </Link>
+        )}
+      </div>
+    </>
+  );
+};
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -85,7 +108,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` py-4 sticky top-0 left-0 right-0 z-10 duration-1000 ${
+      className={` py-4 sticky top-0 left-0 right-0 z-20 duration-1000 ${
         scroll ? "shadow-md bg-white" : "bg-linear"
       } `}>
       <div className="container">
@@ -95,22 +118,19 @@ const Navbar = () => {
 
         {/* small device */}
         <div className="lg:hidden flex items-center justify-between">
-          <img
-            className="lg:h-6 h-5 mr-9"
-            src={logo}
-            alt="StoreXpert"
-          />
+          <img className="lg:h-6 h-5 mr-9" src={logo} alt="StoreXpert" />
           <Button
             size="icon"
             className="lg:hidden ml-auto"
             onClick={() => setShowNavbar(!showNavbar)}>
             {showNavbar ? (
-              <GiCrossedBones />
+              <GiCrossedBones className="p-[1px]" />
             ) : (
               <HiMiniBars3CenterLeft className="rotate-180 " />
             )}
           </Button>
         </div>
+
         <div
           onClick={() => setShowNavbar(!showNavbar)}
           className={`lg:hidden w-full z-10 ${
