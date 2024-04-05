@@ -6,9 +6,11 @@ import passwordImg from "/src/assets/icons/password.png";
 import { useState } from "react";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import toast from "react-hot-toast";
+import BtnSpinner from "@/components/shared/BtnSpinner";
 
 const SignIn = () => {
   const [passVisible, setPassVisible] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -18,27 +20,33 @@ const SignIn = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    fetch("https://store-xpert-server.vercel.app/api/v1/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.success) {
-          reset();
-          toast.success(data.message);
-          navigate("/");
-        } else {
-          toast.error(data.message);
-          console.log("Success:", data);
-        }
+  const onSubmit = async (data) => {
+    setLoading(true);
+    try {
+      await fetch("https://store-xpert-server.vercel.app/api/v1/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          setLoading(false);
+
+          if (data?.success) {
+            console.log(data);
+            console.log(data?.data?.accessToken);
+            localStorage.setItem("storeXpert", data?.data?.accessToken);
+            reset();
+            toast.success(data?.message);
+            navigate("/");
+          } else {
+            toast.error(data?.message);
+          }
+        });
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   };
 
   return (
@@ -103,8 +111,12 @@ const SignIn = () => {
               )}
             </div>
 
-            <Button size="lg" className="rounded-full mx-auto">
-              <input className="uppercase" type="submit" />
+            <Button
+              size="lg"
+              type="submit"
+              disabled={isLoading}
+              className="rounded-full mx-auto uppercase">
+              {isLoading ? <BtnSpinner /> : "Submit"}
             </Button>
           </form>
         </div>
