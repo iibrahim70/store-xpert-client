@@ -1,20 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import emailImg from "/src/assets/icons/email.png"
-import passwordImg from "/src/assets/icons/password.png"
+import { Link, useNavigate } from "react-router-dom";
+import emailImg from "/src/assets/icons/email.png";
+import passwordImg from "/src/assets/icons/password.png";
+import { useState } from "react";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
+  const [passVisible, setPassVisible] = useState(false);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    const { name, email, password, confirmPassword } = data;
-
+    fetch("https://store-xpert-server.vercel.app/api/v1/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          reset();
+          toast.success(data.message);
+          navigate("/");
+        } else {
+          toast.error(data.message);
+          console.log("Success:", data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -35,40 +59,46 @@ const SignIn = () => {
             {/* email */}
             <div className="w-full">
               <label className="flex items-center bg-gray-200 w-full">
-                <img
-                  className="w-12 p-3"
-                  src={emailImg}
-                  alt=""
-                />
+                <img className="w-12 p-3" src={emailImg} alt="" />
                 <input
                   className="p-4 bg-gray-200 focus:outline-none w-full"
                   placeholder="Email"
-                  {...register("email", { required: true })}
+                  {...register("email", { required: "Email is required" })}
                 />
               </label>
               {errors.email && (
                 <p className="text-red-400 text-xs font-semibold text-left">
-                  Email is required
+                  {errors.email.message}
                 </p>
               )}
             </div>
             {/* password */}
             <div className="w-full">
-              <label className="flex items-center bg-gray-200 w-full">
-                <img
-                  className="w-12 p-3"
-                  src={passwordImg}
-                  alt=""
-                />
+              <label className="flex relative items-center bg-gray-200 w-full">
+                <img className="w-12 p-3" src={passwordImg} alt="" />
                 <input
+                  type={passVisible ? "text" : "password"}
                   className="p-4 bg-gray-200 focus:outline-none w-full"
                   placeholder="Password"
-                  {...register("password", { required: true })}
+                  {...register("password", {
+                    required: "Password is required ",
+                  })}
                 />
+                {passVisible ? (
+                  <IoMdEye
+                    onClick={() => setPassVisible(!passVisible)}
+                    className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
+                  />
+                ) : (
+                  <IoMdEyeOff
+                    onClick={() => setPassVisible(!passVisible)}
+                    className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
+                  />
+                )}
               </label>
               {errors.password && (
                 <p className="text-red-400 text-xs font-semibold text-left">
-                  Password is required
+                  {errors.password.message}
                 </p>
               )}
             </div>
