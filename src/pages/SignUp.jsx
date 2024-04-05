@@ -9,9 +9,11 @@ import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import BtnSpinner from "@/components/shared/BtnSpinner";
 
 const SignUp = () => {
   const [passVisible, setPassVisible] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -23,31 +25,33 @@ const SignUp = () => {
   console.log(errors.password);
 
   const onSubmit = (data) => {
-    fetch("https://store-xpert-server.vercel.app/api/v1/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.success) {
-          reset();
-          toast.success(data.message);
-          navigate("/");
-        } else {
-          toast.error(data.message);
+    setLoading(true);
 
-          console.log("Success:", data);
-        }
+    try {
+      fetch("https://store-xpert-server.vercel.app/api/v1/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          setLoading(false);
+          if (data.success) {
+            reset();
+            toast.success(data.message);
+            navigate("/login");
+          } else {
+            toast.error(data.message);
+          }
+        });
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   };
 
   return (
-    <section className="flex max-lg:flex-col lg:min-h-dvh">
+    <section className="flex max-lg:flex-col lg:min-h-dvh select-none">
       <div className="bg-primary lg:w-2/5 w-full text-white overflow-hidden p-5">
         <h4>StoreXpert</h4>
         <div className="h-full pb-8 text-center flex flex-col items-center justify-center">
@@ -190,8 +194,12 @@ const SignUp = () => {
             )}
           </div> */}
 
-          <Button size="lg" className="rounded-full mx-auto">
-            <input className="uppercase" type="submit" />
+          <Button
+            size="lg"
+            type="submit"
+            disabled={isLoading}
+            className="rounded-full mx-auto uppercase">
+            {isLoading ? <BtnSpinner /> : "Submit"}
           </Button>
         </form>
       </div>

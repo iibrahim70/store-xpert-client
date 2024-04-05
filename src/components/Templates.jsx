@@ -26,12 +26,19 @@ const demos = [
 
 const Templates = () => {
   return (
-    <section id="templates" className="container lg:pt-28 pt-24 text-center">
-      <h3>আপনার পছন্দের <span className="text-primary">টেমপ্লেটটি বাছাই করুন</span></h3>
-
+    <section
+      id="templates"
+      className="container lg:pt-28 pt-24 text-center">
+      <h3>
+        আপনার পছন্দের{" "}
+        <span className="text-primary">টেমপ্লেটটি বাছাই করুন</span>
+      </h3>
+      
       <div className="mt-10 grid gap-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {demos?.map((demo) => (
-          <div key={demo?._id} className="border shadow overflow-hidden rounded-xl">
+          <div
+            key={demo?._id}
+            className="border shadow overflow-hidden rounded-xl">
             {demo?.img ? (
               <>
                 <div className=" h-96 overflow-hidden">

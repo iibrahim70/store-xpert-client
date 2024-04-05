@@ -4,6 +4,7 @@ import payment from "/src/assets/features/payment.png";
 import socialMedia from "/src/assets/features/social-media.png";
 import delivery from "/src/assets/features/back-office.png";
 import orderManagement from "/src/assets/features/inspection.png";
+import XMark from "./shared/XMark";
 
 const features = [
   {
@@ -45,10 +46,15 @@ const features = [
 
 const AllFeatures = () => {
   return (
-    <section id="features" className="container lg:pt-28 pt-24 text-center">
+    <section
+      id="features"
+      className="container relative z-10 lg:pt-28 pt-24 text-center">
       <h3 className="text-slate-950">
         আমাদের <span className="text-primary">ফিচারসমূহ</span>
       </h3>
+      <div className="absolute -z-10 top-0 right-1 max-lg:hidden">
+        <XMark />
+      </div>
       <div className="mt-10  grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {features?.map((feature, index) => (
           <div
