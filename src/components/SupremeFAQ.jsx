@@ -37,7 +37,8 @@ const faqs = [
 const SupremeFAQ = () => {
   return (
     <section className="container lg:py-28 py-24 ">
-      <div className="border rounded-lg p-3 grid lg:grid-cols-2 grid-cols-1 items-center">
+      <h2 className="text-primary text-center">FAQ</h2>
+      <div className="border mt-6 rounded-lg p-3 grid lg:grid-cols-2 grid-cols-1 items-center">
         <img className="max-w-96 mx-auto" src={faq} alt="laptop img" />
         <Accordion type="single" collapsible>
           {faqs?.map((faq) => (
