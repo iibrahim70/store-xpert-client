@@ -6,6 +6,9 @@ import logoImg from "/src/assets/logos/logo-white-blue.png";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { buttonVariants } from "../ui/button";
+import { cn } from "@/lib/utils";
+import Guarantee from "../Guarantee";
 
 const links = [
   { text: "Terms of Use", url: "/terms-of-use" },
@@ -32,11 +35,10 @@ const contactInfo = [
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer id="contact-us" className="bg-slate-900 text-white">
-      <div className=" container  relative">
-        <div className="absolute -top-12 left-0 right-0 text-primary bg-slate-900 shadow-xl py-6 mx-5 rounded-xl flex max-md:flex-col  items-center justify-center gap-5">
-          <h3>Our Communities: Loading...</h3>
-          {/* something */}
+    <footer id="contact-us" className="bg-slate-900 text-white ">
+      <div className=" container relative">
+        <div className="absolute lg:-top-16 max-md:-top-28 right-3 left-3 z-10">
+         <Guarantee/>
         </div>
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-6 justify-between py-20">
           <div>

@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import emailImg from "/src/assets/icons/email.png";
-import passwordImg from "/src/assets/icons/password.png";
+// import emailImg from "/src/assets/icons/email.png";
+// import passwordImg from "/src/assets/icons/password.png";
 import { useState } from "react";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import toast from "react-hot-toast";
 import BtnSpinner from "@/components/shared/BtnSpinner";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { MdOutlineEmail } from "react-icons/md";
 
 const SignIn = () => {
   const [passVisible, setPassVisible] = useState(false);
@@ -65,12 +67,19 @@ const SignIn = () => {
             className="mt-4 flex flex-col items-start gap-8 w-full max-w-sm">
             {/* email */}
             <div className="w-full">
-              <label className="flex items-center bg-gray-200 w-full">
-                <img className="w-12 p-3" src={emailImg} alt="" />
+              <label className="flex items-center bg-gray-200 w-full rounded-full px-5">
+                {/* <img className="w-12 p-3" src={emailImg} alt="" /> */}
+                <MdOutlineEmail className="w-6 h-6 text-primary" />
                 <input
-                  className="p-4 bg-gray-200 focus:outline-none w-full"
+                  className="p-4 bg-gray-200 focus:outline-none w-full rounded-full"
                   placeholder="Email"
-                  {...register("email", { required: "Email is required" })}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
                 />
               </label>
               {errors.email && (
@@ -81,23 +90,24 @@ const SignIn = () => {
             </div>
             {/* password */}
             <div className="w-full">
-              <label className="flex relative items-center bg-gray-200 w-full">
-                <img className="w-12 p-3" src={passwordImg} alt="" />
+              <label className="flex relative items-center bg-gray-200 w-full rounded-full px-5">
+                {/* <img className="w-12 p-3" src={passwordImg} alt="" /> */}
+                <RiLockPasswordLine className="w-6 h-6 text-primary" />
                 <input
                   type={passVisible ? "text" : "password"}
-                  className="p-4 bg-gray-200 focus:outline-none w-full"
+                  className="p-4 bg-gray-200 focus:outline-none w-full rounded-full"
                   placeholder="Password"
                   {...register("password", {
                     required: "Password is required ",
                   })}
                 />
                 {passVisible ? (
-                  <IoMdEye
+                  <IoMdEyeOff
                     onClick={() => setPassVisible(!passVisible)}
                     className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
                   />
                 ) : (
-                  <IoMdEyeOff
+                  <IoMdEye
                     onClick={() => setPassVisible(!passVisible)}
                     className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
                   />
