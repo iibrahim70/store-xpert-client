@@ -29,7 +29,7 @@ const demos = [
 const Templates = () => {
   return (
     <section id="templates" className="bg-secondary">
-      <div className="container lg:py-28 py-24 text-center">
+      <div className="container py-24 text-center">
         <h3>
           আমাদের <span className="text-primary">টেমপ্লেট</span>
         </h3>

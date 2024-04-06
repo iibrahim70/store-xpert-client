@@ -27,7 +27,7 @@ const benefits = [
 const OurAchievements = () => {
   return (
     <section className="bg-secondary py-24 ">
-      <div className="container flex max-lg:flex-col items-center justify-center lg:gap-14 gap-6  sm:p-7 p-5 rounded-xl gap-y-7">
+      <div className="container flex max-lg:flex-col items-center justify-center lg:gap-14 gap-6 sm:p-7 p-5 rounded-xl gap-y-7">
         <img
           className="rounded-3xl max-md:max-w-full shadow-lg max-w-lg"
           src={laptop}
@@ -35,7 +35,8 @@ const OurAchievements = () => {
         />
         <div className="">
           <h3 className="leading-normal">
-            অটোমেশনের মাধ্যমে ব্যবসার সেলসকে করুন গতিশীল
+            <span className="text-primary">অটোমেশনের</span> মাধ্যমে ব্যবসার
+            সেলসকে করুন গতিশীল
           </h3>
           <p className="text-slate-600 mt-2">
             কোডিং দক্ষতা ছাড়াই সাজিয়ে নিন নিজের অনলাইন শপ, তৈরি করুন আনলিমিটেড

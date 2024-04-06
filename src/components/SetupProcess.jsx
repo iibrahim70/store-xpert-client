@@ -4,7 +4,7 @@ const SetupProcess = () => {
       id="setup-process"
       className=" lg:py-28 py-24 text-center bg-secondary">
       <div className="container">
-        <h3>ওয়েবসাইট সেটাপ প্রসেস</h3>
+        <h3><span className="text-primary">ওয়েবসাইট</span> সেটাপ প্রসেস</h3>
         <img
           className="lg:block hidden"
           src="https://storex.com.bd/imgs/pages/storexInfoGraphicsWeb.png"

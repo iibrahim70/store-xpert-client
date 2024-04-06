@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { MdOutlineStarRate } from "react-icons/md";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -12,25 +13,47 @@ const Testimonials = () => {
       });
   }, []);
 
-
   return (
-    <section className="lg:py-24 pt-16 py-10 bg-secondary">
-      <h2 className="text-center">Testimonials</h2>
-      <Marquee className="" pauseOnHover={true} autoFill={true} speed={20}>
+    <section className="lg:py-24 pt-16 pb-24 bg-secondary z-0">
+      <h2 className="text-center text-primary">Testimonials</h2>
+      <Marquee className="" pauseOnHover={true} autoFill={true} speed={60}>
         <div className="flex flex-col flex-wrap overflow-visible lg:gap-6 gap-5 items-center justify-center h-[550px] w-full pr-48 py-10">
           {testimonials?.map((testimonial) => (
             <div
               key={testimonial?._id}
               className="h-fit max-w-80 w-full py-6 p-5 rounded-lg shadow hover:shadow-2xl duration-500 bg-white scale-100 hover:scale-105">
               <div className="flex items-center gap-4">
-                <div className="bg-slate-500 w-10 h-10 p-2 rounded-full text-white font-bold text-center">
+                <div className="bg-slate-500 md:w-10 md:h-10 w-8 h-8 md:p-2 p-1 rounded-full text-white font-bold text-center">
                   {testimonial?.name.split("")[0]}
                 </div>
-                <p>Ratings:{testimonial?.rating}</p>
+                <div className="flex items-center gap-1">
+                  {/* <ReactStars
+                  classNames="bg-green-300"
+                    count={5}
+                    value={testimonial?.rating}
+                    size={24}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star"></i>}
+                    halfIcon={<i className="fa fa-star-half-alt"></i>}
+                    fullIcon={<i className="fa fa-star"></i>}
+                    activeColor="#ffd700"
+                  /> */}
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <div key={index} className="p-[2px] bg-primary/20">
+                      <MdOutlineStarRate
+                        className={`${
+                          index < testimonial?.rating
+                            ? "text-primary"
+                            : "text-gray-600"
+                        } text-lg`}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
               <div>
                 <p className="text-sm font-bold my-2">{testimonial?.name}</p>
-                <p>
+                <p className=" md:text-base sm:text-sm text-xs">
                   &quot;
                   {testimonial?.testimonial.length > 130
                     ? testimonial?.testimonial.substring(0, 130) + "..."
