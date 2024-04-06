@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+// import Hero from "@/components/Hero";
 import ShortFeatures from "@/components/ShortFeatures";
 import AllFeatures from "@/components/AllFeatures";
 import Templates from "@/components/Templates";
@@ -9,12 +9,14 @@ import WhyUs from "@/components/WhyUs";
 import Marketing from "@/components/Marketing";
 import Testimonials from "@/components/Testimonials";
 import TemplateHighlights from "@/components/TemplateHighlights";
+import Test2 from "@/components/Test2";
 
 const Home = () => {
   return (
     <div className="bg-white select-none">
-      <Hero />
-      <ShortFeatures />
+      {/* <Hero /> */}
+      <Test2 />
+      {/* <ShortFeatures /> */}
       <Templates />
       <WhyUs />
       <SetupProcess />

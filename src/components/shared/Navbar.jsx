@@ -89,26 +89,26 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY <= 76) {
-        setScroll(false);
-      } else {
-        setScroll(true);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY <= 76) {
+  //       setScroll(false);
+  //     } else {
+  //       setScroll(true);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <nav
-      className={` py-4 sticky top-0 left-0 right-0 z-20 duration-1000 ${
-        scroll ? "shadow-md bg-white" : "bg-linear"
+      className={` py-4 sticky top-0 left-0 right-0 z-20 duration-1000 shadow ${
+        scroll ? "bg-white" : "bg-white"
       } `}>
       <div className="container">
         <div className="lg:flex hidden items-center justify-between">

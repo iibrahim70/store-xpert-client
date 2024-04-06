@@ -47,7 +47,7 @@ const WhyUs = () => {
       <div className="rounded-xl container flex max-lg:flex-col justify-between gap-10 items-center lg:p-16 sm:p-7 p-5">
         <div>
           <h4 className="leading-normal">
-            কেন StoreXpert এর কাছ থেকে ওয়েবসাইট নিবেন?
+            কেন <span className="text-primary">StoreXpert</span> এর কাছ থেকে ওয়েবসাইট নিবেন?
           </h4>
           <ul className="mt-5 grid grid-cols-1 gap-8">
             {features.map((feature, index) => (
