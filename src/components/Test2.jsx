@@ -82,8 +82,8 @@ const Test2 = () => {
           </div>
 
           {/* slider */}
-          <div>
-            <Carousel className="w-full lg:drop-shadow-2xl drop-shadow-md max-w-3xl lg:absolute lg:-right-16 lg:top-1/2 lg:-translate-y-1/2 z-10">
+          <div className="">
+            <Carousel className="w-full lg:drop-shadow-2xl rounded-xl overflow-hidden drop-shadow-md max-w-xl z-10">
               <CarouselContent>
                 {images.map((img, index) => (
                   <CarouselItem key={index}>
@@ -109,7 +109,7 @@ const Test2 = () => {
         src="https://prompt-ng.coderthemes.com/assets/images/pattern/dot2.svg"
         alt=""
       />
-      <div className="-mt-10">
+      <div className="-mt-20">
         <ShortFeatures />
       </div>
     </>

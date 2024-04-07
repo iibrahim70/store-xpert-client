@@ -6,8 +6,6 @@ import logoImg from "/src/assets/logos/logo-white-blue.png";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { buttonVariants } from "../ui/button";
-import { cn } from "@/lib/utils";
 import Guarantee from "../Guarantee";
 
 const links = [
@@ -21,6 +19,7 @@ const contactInfo = [
   {
     icon: IoCall,
     text: "+880 1950-606020",
+    active: true,
   },
   {
     icon: MdEmail,
@@ -38,9 +37,9 @@ const Footer = () => {
     <footer id="contact-us" className="bg-slate-900 text-white ">
       <div className=" container relative">
         <div className="absolute lg:-top-16 max-md:-top-28 right-3 left-3 z-10">
-         <Guarantee/>
+          <Guarantee />
         </div>
-        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-6 justify-between py-20">
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 justify-between max-lg:pt-28 py-20">
           <div>
             <img className="lg:h-8 h-7 mr-9" src={logoImg} alt="StoreXpert" />
             <p className="leading-normal text-base mt-2">
@@ -81,6 +80,9 @@ const Footer = () => {
                 <li key={index} className="flex items-baseline gap-2">
                   <info.icon className="text-primary text-lg" />
                   <p>{info.text}</p>
+                  {info?.active && (
+                    <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                  )}
                 </li>
               ))}
             </ul>

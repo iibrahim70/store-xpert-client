@@ -40,7 +40,7 @@
     @apply lg:text-3xl text-2xl font-bold drop-shadow;
   }
   h5 {
-    @apply lg:text-2xl text-xl font-bold drop-shadow text-primary;
+    @apply lg:text-2xl text-xl font-bold drop-shadow ;
   }
   h6 {
     @apply lg:text-xl md:text-base text-sm font-bold drop-shadow text-primary;

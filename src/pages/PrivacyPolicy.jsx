@@ -50,15 +50,15 @@ const policies = [
 
 const PrivacyPolicy = () => {
   return (
-    <section className="mt-12 container text-center">
+    <section className="mt-12 mb-28 container text-center">
       <h3>
         Privacy<span className="text-primary">Policy</span>
       </h3>
-      <h6 className="text-gray-800 mt-6">
-        সকল ডিজিটাল উদ্যোক্তাদের জন্য ইকমার্স কে ব্যাবসা বান্ধব করার লক্ষ্যে
-        আমরা আপনার আপনার তথ্য সংগ্রহ করি।
-      </h6>
-
+      <p className="text-gray-600 mt-6 font-semibold md:text-lg">
+        যেহেতু আপনি আমাদের থেকে ইকমার্স ওয়েবসাইট ডেভেলপমেন্ট এর সার্ভিস গুলো
+        নিচ্ছেন সেহেতু আপনি নিন্মে উল্লেখিত শর্ত গুলো মেনে নিচ্ছেন। WebHub এর
+        ইকমার্স সার্ভিস এর নাম হলো StoreXpert
+      </p>
       <ul className="text-left flex flex-col gap-3 mt-10 list-disc pl-4">
         {policies?.map((item, index) => (
           <li key={index} className="text-gray-800 max-sm:text-sm">

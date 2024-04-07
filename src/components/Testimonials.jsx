@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { MdOutlineStarRate } from "react-icons/md";
+import { FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -39,11 +39,11 @@ const Testimonials = () => {
                     activeColor="#ffd700"
                   /> */}
                   {Array.from({ length: 5 }, (_, index) => (
-                    <div key={index} className="p-[2px] bg-primary/20">
-                      <MdOutlineStarRate
+                    <div key={index} className="p-[2px] drop-shadow-md">
+                      <FaStar
                         className={`${
                           index < testimonial?.rating
-                            ? "text-primary"
+                            ? "text-yellow-500"
                             : "text-gray-600"
                         } text-lg`}
                       />
@@ -53,7 +53,7 @@ const Testimonials = () => {
               </div>
               <div>
                 <p className="text-sm font-bold my-2">{testimonial?.name}</p>
-                <p className=" md:text-base sm:text-sm text-xs">
+                <p className=" md:text-base text-slate-600 sm:text-sm text-xs">
                   &quot;
                   {testimonial?.testimonial.length > 130
                     ? testimonial?.testimonial.substring(0, 130) + "..."
