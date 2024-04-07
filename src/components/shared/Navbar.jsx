@@ -2,7 +2,7 @@ import { HashLink as NavLink } from "react-router-hash-link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from "/src/assets/logos/storexpert-blue.png";
 
 import { GiCrossedBones } from "react-icons/gi";
@@ -87,7 +87,7 @@ const BarItems = () => {
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
-  const [scroll, setScroll] = useState(false);
+  // const [scroll, setScroll] = useState(false);
 
   // useEffect(() => {
   //   const handleScroll = () => {

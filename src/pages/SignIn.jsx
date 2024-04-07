@@ -1,14 +1,16 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-// import emailImg from "/src/assets/icons/email.png";
-// import passwordImg from "/src/assets/icons/password.png";
+
+import logo from "/src/assets/logos/storexpert-blue.png";
+import loginImg from "/src/assets/others/login.svg";
 import { useState } from "react";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import toast from "react-hot-toast";
 import BtnSpinner from "@/components/shared/BtnSpinner";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
+import { cn } from "@/lib/utils";
 
 const SignIn = () => {
   const [passVisible, setPassVisible] = useState(false);
@@ -51,102 +53,94 @@ const SignIn = () => {
   };
 
   return (
-    <section className="flex max-lg:flex-col-reverse lg:min-h-dvh">
-      {/* sign in form */}
-      <div className="p-5 lg:w-3/5 w-full overflow-hidden">
-        <h4 className="max-lg:hidden">
-          Store<span className="text-primary">Xpert</span>
-        </h4>
-        <div className="h-full text-center flex flex-col items-center justify-center lg:p-10">
-          <h1 className="text-primary max-lg:mt-5">Sign in to Account</h1>
-          <p className="text-gray-500 mt-8">
-            Please provide your verified information.
-          </p>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="mt-4 flex flex-col items-start gap-8 w-full max-w-sm">
-            {/* email */}
-            <div className="w-full">
-              <label className="flex items-center bg-gray-200 w-full rounded-full px-5">
-                {/* <img className="w-12 p-3" src={emailImg} alt="" /> */}
-                <MdOutlineEmail className="w-6 h-6 text-primary" />
-                <input
-                  className="p-4 bg-gray-200 focus:outline-none w-full rounded-full"
-                  placeholder="Email"
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address",
-                    },
-                  })}
-                />
-              </label>
-              {errors.email && (
-                <p className="text-red-400 text-xs font-semibold text-left">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
-            {/* password */}
-            <div className="w-full">
-              <label className="flex relative items-center bg-gray-200 w-full rounded-full px-5">
-                {/* <img className="w-12 p-3" src={passwordImg} alt="" /> */}
-                <RiLockPasswordLine className="w-6 h-6 text-primary" />
-                <input
-                  type={passVisible ? "text" : "password"}
-                  className="p-4 bg-gray-200 focus:outline-none w-full rounded-full"
-                  placeholder="Password"
-                  {...register("password", {
-                    required: "Password is required ",
-                  })}
-                />
-                {passVisible ? (
-                  <IoMdEyeOff
-                    onClick={() => setPassVisible(!passVisible)}
-                    className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
-                  />
-                ) : (
-                  <IoMdEye
-                    onClick={() => setPassVisible(!passVisible)}
-                    className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
-                  />
-                )}
-              </label>
-              {errors.password && (
-                <p className="text-red-400 text-xs font-semibold text-left">
-                  {errors.password.message}
-                </p>
-              )}
-            </div>
-
-            <Button
-              size="lg"
-              type="submit"
-              disabled={isLoading}
-              className="rounded-full mx-auto uppercase">
-              {isLoading ? <BtnSpinner /> : "Submit"}
-            </Button>
-          </form>
-        </div>
-      </div>
-
-      {/* 2nd column */}
-      <div className="bg-primary lg:w-2/5 w-full  text-white overflow-hidden p-5">
-        <h4 className="lg:hidden">StoreXpert</h4>
-        <div className="h-full pb-8 text-center flex flex-col items-center justify-center">
-          <h1 className="my-8">Hello, Friend!</h1>
-          <p className="text-secondary mb-9">
-            Fill up personal information and start journey with us.
-          </p>
-          <Link to="/sign-up">
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full text-white border-white">
-              SIGN UP
-            </Button>
+    <section className="h-dvh select-none">
+      <div className="flex items-center justify-center w-full h-full mx-auto relative ">
+        {/* form */}
+        <div className="lg:w-2/5 w-full mx-3 ">
+          <Link to="/" className="absolute top-4 left-4">
+            <img className="h-6  block  mr-9" src={logo} alt="StoreXpert" />
           </Link>
+          <div className="max-lg:shadow-md  md:p-10 p-4 py-10 rounded-lg">
+            <h3 className="text-primary">Sign in to Account</h3>
+            <p className="text-slate-600 mt-1">
+              Please provide your verified information.
+            </p>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col items-start gap-8 mt-8 w-full sm:max-w-sm">
+              {/* email */}
+              <div className="w-full">
+                <p className="font-semibold text-slate-600">Your Email:</p>
+                <label className="flex items-center bg-gray-200 w-full rounded-xl pl-4">
+                  {/* <img className="w-12 p-3" src={emailImg} alt="" /> */}
+                  <MdOutlineEmail className="w-6 h-6 mr-2 text-primary" />
+                  <input
+                    className="p-4 bg-gray-200 focus:outline-none w-full rounded-xl"
+                    placeholder="Email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address",
+                      },
+                    })}
+                  />
+                </label>
+                {errors.email && (
+                  <p className="text-red-400 text-xs font-semibold text-left">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+              {/* password */}
+              <div className="w-full">
+                <p className="font-semibold text-slate-600">Your Password:</p>
+                <label className="flex relative items-center bg-gray-200 w-full rounded-xl pl-4">
+                  {/* <img className="w-12 p-3" src={passwordImg} alt="" /> */}
+                  <RiLockPasswordLine className="w-6 h-6 mr-2 text-primary" />
+                  <input
+                    type={passVisible ? "text" : "password"}
+                    className="p-4 bg-gray-200 focus:outline-none w-full rounded-xl"
+                    placeholder="Password"
+                    {...register("password", {
+                      required: "Password is required ",
+                    })}
+                  />
+                  {passVisible ? (
+                    <IoMdEyeOff
+                      onClick={() => setPassVisible(!passVisible)}
+                      className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
+                    />
+                  ) : (
+                    <IoMdEye
+                      onClick={() => setPassVisible(!passVisible)}
+                      className="md:text-2xl text-xl text-slate-500 absolute top-1/2 right-4 -translate-y-1/2"
+                    />
+                  )}
+                </label>
+                {errors.password && (
+                  <p className="text-red-400 text-xs font-semibold text-left">
+                    {errors.password.message}
+                  </p>
+                )}
+                <p className="text-primary font-semibold text-right hover:underline mt-1">Forgot password?</p>
+              </div>
+              <Button
+                
+                type="submit"
+                disabled={isLoading}
+                className={cn(buttonVariants({ size: "lg" }), "md:py-[10px] py-2 w-full")}>
+                {isLoading ? <BtnSpinner /> : "Submit"}
+              </Button>
+            </form>
+            <p className="font-medium mt-2 text-slate-600">Don&apos;t have an account? <Link to="/sign-up" className="text-primary font-semibold hover:underline">Sign Up</Link></p>
+          </div>
+        </div>
+
+        <div className="bg-slate-50 flex flex-col justify-center items-center lg:w-3/5 text-center h-full p-10 max-md:hidden">
+          <p className="text-slate-600 font-medium text-lg">Nice to see you again.</p>
+          <h2 className="text-primary mt-5">Welcome back!</h2>
+          <img className="w-full mx-auto max-w-xl mt-16" src={loginImg} alt="" />
         </div>
       </div>
     </section>
