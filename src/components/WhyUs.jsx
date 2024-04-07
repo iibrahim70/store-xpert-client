@@ -53,7 +53,7 @@ const WhyUs = () => {
             {features.map((feature, index) => (
               <li key={index} className="">
                 <div>
-                  <h6>{feature?.title}</h6>
+                  <h5 className="text-slate-800">{feature?.title}</h5>
                   <p className="text-slate-600">{feature?.desc}</p>
                 </div>
               </li>
