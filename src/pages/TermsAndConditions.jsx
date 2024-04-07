@@ -44,15 +44,15 @@ const serviceTerms = [
 
 const TermsAndConditions = () => {
   return (
-    <section className="mt-12 container text-center">
+    <section className="mt-12 mb-24 container text-center">
       <h3>
         Terms <span className="text-primary">&</span> Conditions
       </h3>
-      <h6 className="text-gray-800 mt-6">
+      <p className="text-gray-600 mt-6 font-semibold md:text-lg">
         যেহেতু আপনি আমাদের থেকে ইকমার্স ওয়েবসাইট ডেভেলপমেন্ট এর সার্ভিস গুলো
         নিচ্ছেন সেহেতু আপনি নিন্মে উল্লেখিত শর্ত গুলো মেনে নিচ্ছেন। WebHub এর
         ইকমার্স সার্ভিস এর নাম হলো StoreXpert
-      </h6>
+      </p>
 
       <ul className="text-left flex flex-col gap-3 mt-10 list-disc pl-4">
         {serviceTerms?.map((item, index) => (
