@@ -67,7 +67,11 @@ const SignUp = () => {
             Nice to see you again.
           </p>
           <h2 className="text-primary mt-5">Welcome back!</h2>
-          <img className="w-full mx-auto max-w-xl mt-16" src={loginImg} alt="" />
+          <img
+            className="w-full mx-auto max-w-xl mt-16"
+            src={loginImg}
+            alt=""
+          />
         </div>
 
         {/* sign up form */}
@@ -208,7 +212,10 @@ const SignUp = () => {
               size="lg"
               type="submit"
               disabled={isLoading}
-              className={cn(buttonVariants({ size: "lg" }), "md:py-[10px] py-2 w-full")}>
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "md:py-[10px] py-2 w-full"
+              )}>
               {isLoading ? <BtnSpinner /> : "Submit"}
             </Button>
           </form>
