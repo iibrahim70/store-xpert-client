@@ -99,9 +99,9 @@ const Footer = () => {
             <Link
               to="https://apurbahasanj.netlify.app/"
               target="blank"
-              title="CyberFlux Ltd."
+              title="Skynetex"
               className="hover:underline text-primary hover:text-red-500">
-              CyberFlux Ltd.
+              Skynetex
             </Link>
           </div>
         </div>
